@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import { Box, Typography, Accordion, AccordionDetails, AccordionSummary, useMediaQuery, useTheme } from '@mui/material';
 import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material';
 
-const Faq = () => {
+const Faq = React.forwardRef((props, ref) => {
     
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const [openAccordion, setOpenAccordion] = useState('');
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row-reverse', justifyContent: 'center', alignItems: 'center', marginTop: isMobile ? '20px' : '80px', padding: isMobile ? '0 20px' : '0' }}>
-      <img src={isMobile ? './Multipizza.png' : './Multipizza.png'}  alt="Pizza" style={{ width: '100%', maxWidth: '600px', marginBottom: isMobile ? '30px' : 0 }} /> {/* Diminua o marginBottom aqui */}
+    <div ref={ref}>
+    <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row-reverse', justifyContent: 'center', alignItems: 'center', marginTop: isMobile ? '20px' : '80px', padding: isMobile ? '0 20px' : '0', width: isMobile ? '90%' : '100%' }}>
+      <img src={isMobile ? './Multipizza.png' : './Multipizza.png'}  alt="Pizza" style={{ width: '100%', maxWidth: '600px', marginBottom: isMobile ? '30px' : 0 }} /> 
       <Box sx={{ textAlign: isMobile ? 'left' : 'left', maxWidth:'610px', marginRight: isMobile ? 0 : '30px' }}>
-        <Typography variant={isMobile ? "h5" : "h6"} sx={{color: '#FFA500', fontWeight:'bold', marginBottom: isMobile ? '20px' : '10px'}}>
+        <Typography variant={isMobile ? "h5" : "h6"} sx={{color: '#FF5000', fontWeight:'bold', marginBottom: isMobile ? '20px' : '10px'}}>
           FAQ
         </Typography>
         <Typography variant={isMobile ? "h5" : "h4"} sx={{ fontWeight:'bold', marginBottom: isMobile ? '20px' : '10px'}}>
@@ -21,7 +22,7 @@ const Faq = () => {
              
         </Typography>
         <Typography sx={{marginBottom: isMobile ? '30px' : 0, fontWeight:'300'}}>
-            <Box>Lorem ipsum dolor sit amet consectetur. <span style={{color: '#FFA500', fontWeight:'bold'}}>Etiam pellentesque</span> gravida </Box>
+            <Box>Lorem ipsum dolor sit amet consectetur. <span style={{color: '#FF5000', fontWeight:'bold'}}>Etiam pellentesque</span> gravida </Box>
             <Box> eu egestas sed quis donec ipsum eu. In viverra velit.</Box>
         </Typography>
         <Accordion style={{ marginTop: '15px', maxWidth: '100%', boxShadow: 'none' }}
@@ -117,7 +118,8 @@ const Faq = () => {
         
       </Box>
     </Box>
+    </div>
   );
-};
+});
 
 export default Faq;

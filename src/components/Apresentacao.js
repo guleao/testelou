@@ -1,16 +1,17 @@
 import React from 'react';
 import { Box, Typography, List, ListItem, ListItemIcon, ListItemText, useMediaQuery, useTheme } from '@mui/material';
 
-const Apresentacao = () => {
+const Apresentacao = React.forwardRef((props, ref)  => {
     
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center', marginTop: '50px', padding: isMobile ? '0 20px' : '0' }}>
+    <div ref={ref}>
+    <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center', marginTop: '50px', padding: isMobile ? '0 20px' : '0', width: isMobile ? '90%' : '100%' }}>
       <img src={isMobile ? './Pizza_derretendoMob.png' : './Pizza_derretendo.png'}  alt="Pizza" style={{ width: '100%', maxWidth: '600px', marginRight: isMobile ? 0 : '20px', marginBottom: isMobile ? '20px' : 0 }} />
       <Box sx={{ textAlign: isMobile ? 'left' : 'left' }}>
-        <Typography variant={isMobile ? "h6" : "h6"} gutterBottom sx={{color: '#FFA500', fontWeight:'bold', marginLeft: isMobile ? 0 : '15px'}}>
+        <Typography variant={isMobile ? "h6" : "h6"} gutterBottom sx={{color: '#FF5000', fontWeight:'bold', marginLeft: isMobile ? 0 : '15px'}}>
           Por que escolher Pizza SVG
         </Typography>
         <Typography variant={isMobile ? "h5" : "h4"} sx={{ fontWeight:'bold', marginBottom:'10px', marginLeft: isMobile ? 0 : '15px' }}>
@@ -73,7 +74,8 @@ const Apresentacao = () => {
         </List>
       </Box>
     </Box>
+    </div>
   );
-};
+});
 
 export default Apresentacao;
