@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, ListItem, Grid, Paper, ListItemSecondaryAction } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, ListItem, Grid, Paper } from '@mui/material';
 import { WhatsApp, Menu } from '@mui/icons-material';
 
 const Navbar = ({ bloco1Ref, faqRef, contatoRef }) => {
@@ -42,31 +42,15 @@ const Navbar = ({ bloco1Ref, faqRef, contatoRef }) => {
         </Grid>
 
         <Grid>
-          <Button 
-            variant="contained" 
-            color="secondary" 
-            sx={{ 
-              marginTop:'15px', 
-              marginLeft: '15px', 
-              backgroundColor: '#ffffff', 
-              color: '#000000', 
-              textTransform: 'none',
-              '&:hover': {
-                backgroundColor: '#ffffff',
-              },
-              '&:active': {
-                backgroundColor: '#ffffff',
-              },
-              '&:focus': {
-                backgroundColor: '#ffffff',
-              }
-            }}
-            onClick={() => window.open('https://wa.me/5545988041417?text=Oi%20mensagem%0A', '_blank')}
-          >
-            <WhatsApp sx={{ marginRight: '5px' }} />
-            Entre em contato
-          </Button>
+        <Button variant="contained" color="secondary" sx={{ marginLeft: 'auto', backgroundColor: '#ffffff', color: '#000000', textTransform: 'none' }}
+                        onClick={() => window.open('https://wa.me/5545988041417?text=Oi%20mensagem%0A', '_blank')}
+
+        >
+          <WhatsApp sx={{ marginRight: '5px' }} />
+          Entre em contato
+        </Button>
         </Grid>
+        
       </Toolbar>
     );
   };
@@ -83,24 +67,24 @@ const Navbar = ({ bloco1Ref, faqRef, contatoRef }) => {
               <Paper sx={{ width:'210px', height:'100%', background:'#FFA500'}}>
                 <List>
                   <ListItem button onClick={() => bloco1Ref.current.scrollIntoView({ behavior: 'smooth' })}>
-                    <Typography variant="h6" sx={{ position: 'relative', '&:hover::before': { width: '100%' }, '&::before': { content: '""', position: 'absolute', width: '0', height: '2px', bottom: '0', left: '50%', backgroundColor: '#000000', transition: 'all 0.5s ease', transform: 'translateX(-50%)' } }}>
+                    <Typography variant="h6" color={'white'}  sx={{ position: 'relative', '&:hover::before': { width: '100%' }, '&::before': { content: '""', position: 'absolute', width: '0', height: '2px', bottom: '0', left: '50%', backgroundColor: '#ffffff', transition: 'all 0.5s ease', transform: 'translateX(-50%)' } }}>
                       Bloco 1
                     </Typography>
                   </ListItem>
                   <ListItem button onClick={() => faqRef.current.scrollIntoView({ behavior: 'smooth' })}>
-                    <Typography variant="h6" sx={{ position: 'relative', '&:hover::before': { width: '100%' }, '&::before': { content: '""', position: 'absolute', width: '0', height: '2px', bottom: '0', left: '50%', backgroundColor: '#000000', transition: 'all 0.5s ease', transform: 'translateX(-50%)' } }}>
+                    <Typography variant="h6" color={'white'}  sx={{ position: 'relative', '&:hover::before': { width: '100%' }, '&::before': { content: '""', position: 'absolute', width: '0', height: '2px', bottom: '0', left: '50%', backgroundColor: '#ffffff', transition: 'all 0.5s ease', transform: 'translateX(-50%)' } }}>
                       FAQ
                     </Typography>
                   </ListItem>
                   <ListItem button onClick={() => contatoRef.current.scrollIntoView({ behavior: 'smooth' })}>
-                    <Typography variant="h6" sx={{ position: 'relative', '&:hover::before': { width: '100%' }, '&::before': { content: '""', position: 'absolute', width: '0', height: '2px', bottom: '0', left: '50%', backgroundColor: '#000000', transition: 'all 0.5s ease', transform: 'translateX(-50%)' } }}>
+                    <Typography variant="h6" color={'white'} sx={{ position: 'relative', '&:hover::before': { width: '100%' }, '&::before': { content: '""', position: 'absolute', width: '0', height: '2px', bottom: '0', left: '50%', backgroundColor: '#ffffff', transition: 'all 0.5s ease', transform: 'translateX(-50%)' } }}>
                       Contato
                     </Typography>
                   </ListItem>
                 </List>
                 <Button 
                   variant="contained" 
-                 
+                  color="secondary" 
                   sx={{ 
                     marginTop:'15px', 
                     marginLeft: '15px', 
