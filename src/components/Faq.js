@@ -20,7 +20,7 @@ const Faq = () => {
             <Box>nosso processo de produção!</Box>
              
         </Typography>
-        <Typography sx={{marginBottom: isMobile ? '30px' : 0}}>
+        <Typography sx={{marginBottom: isMobile ? '30px' : 0, fontWeight:'300'}}>
             <Box>Lorem ipsum dolor sit amet consectetur. <span style={{color: '#FFA500', fontWeight:'bold'}}>Etiam pellentesque</span> gravida </Box>
             <Box> eu egestas sed quis donec ipsum eu. In viverra velit.</Box>
         </Typography>
@@ -34,7 +34,7 @@ const Faq = () => {
                 id="panel1a-header"
                 sx={{ padding: 0 }}  
             >
-                <Typography>Pizza é boa?</Typography>
+                <Typography sx={{fontWeight:'bold'}}>Pizza é boa?</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>
@@ -52,7 +52,7 @@ const Faq = () => {
                 id="panel1a-header"
                 sx={{ padding: 0 }}  
             >
-                <Typography>Vende pizza?</Typography>
+                <Typography sx={{fontWeight:'bold'}}>Vende pizza?</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>
@@ -70,7 +70,7 @@ const Faq = () => {
                 id="panel3a-header"
                 sx={{ padding: 0 }}  
             >
-                <Typography>Tem pizza de calabresa?</Typography>
+                <Typography sx={{fontWeight:'bold'}}>Tem pizza de calabresa?</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>
@@ -88,7 +88,7 @@ const Faq = () => {
                 id="panel1a-header"
                 sx={{ padding: 0 }}  
             >
-                <Typography>Tem delivery?</Typography>
+                <Typography sx={{fontWeight:'bold'}}>Tem delivery?</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>
@@ -106,7 +106,7 @@ const Faq = () => {
                 id="panel5a-header"
                 sx={{ padding: 0 }} 
             >
-                <Typography>Entrega de bike?</Typography>
+                <Typography sx={{fontWeight:'bold'}}>Entrega de bike?</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>
