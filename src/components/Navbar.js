@@ -1,36 +1,103 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Grid, Box } from '@mui/material';
-import { WhatsApp } from '@mui/icons-material';
+import React, { useState } from 'react';
+import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, ListItem, Grid, Paper } from '@mui/material';
+import { WhatsApp, Menu } from '@mui/icons-material';
 
 const Navbar = () => {
-  return (
-    <AppBar position="static" sx={{ background: '#FFA500', height: '130px' }}>
-      <Toolbar sx={{ marginTop: '20px'}}>
-        <Grid container justifyContent="space-around" alignItems="center">
-          <Grid item>
-            <img src="./logo.png" alt="Logo" sx={{ marginRight: '20px' }} />
+
+  const [mobileView, setMobileView] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const handleResize = () => {
+    setMobileView(window.innerWidth < 600);
+  };
+
+  React.useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const displayDesktop = () => {
+    return (
+      <Toolbar sx={{ display:'flex', justifyContent:'space-around', marginTop:'22px' }}>
+        <Grid>
+        <img src="./logo.png" alt="Logo" sx={{ marginRight: '20px' }} />
+        </Grid>
+        
+        <Grid>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '300px' }}>
+          <Typography variant="h6"sx={{ position: 'relative', '&:hover::before': { width: '100%' }, '&::before': { content: '""', position: 'absolute', width: '0', height: '2px', bottom: '0', left: '50%', backgroundColor: '#ffffff', transition: 'all 0.5s ease', transform: 'translateX(-50%)' } }}>
+            Bloco 1
+          </Typography>
+          <Typography variant="h6" sx={{ position: 'relative', '&:hover::before': { width: '100%' }, '&::before': { content: '""', position: 'absolute', width: '0', height: '2px', bottom: '0', left: '50%', backgroundColor: '#ffffff', transition: 'all 0.5s ease', transform: 'translateX(-50%)' } }}>
+            FAQ
+          </Typography>
+          <Typography variant="h6" sx={{ position: 'relative', '&:hover::before': { width: '100%' }, '&::before': { content: '""', position: 'absolute', width: '0', height: '2px', bottom: '0', left: '50%', backgroundColor: '#ffffff', transition: 'all 0.5s ease', transform: 'translateX(-50%)' } }}>
+            Contato
+          </Typography>
+        </Box>
+        </Grid>
+
+        <Grid>
+        <Button variant="contained" color="secondary" sx={{ marginLeft: 'auto', backgroundColor: '#ffffff', color: '#000000', textTransform: 'none' }}>
+          <WhatsApp sx={{ marginRight: '5px' }} />
+          Entre em contato
+        </Button>
+        </Grid>
+        
+      </Toolbar>
+    );
+  };
+
+  const displayMobile = () => {
+    return (
+      <Toolbar sx={{ display:'flex', justifyContent:'center', marginTop:'20px'}}>
+        <Grid container>
+          <Grid item xs={2}>
+            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ display:'flex', alignItems:'center', position:'absolute', marginTop:'20px' }} onClick={() => setDrawerOpen(true)}>
+              <Menu />
+            </IconButton>
+            <Drawer anchor="left" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+              <Paper sx={{ width:'210px', height:'100%', background:'#FFA500'}}>
+                <List>
+                  <ListItem button>
+                    <Typography variant="h6" sx={{ color: '#ffffff'}}>
+                      Bloco 1
+                    </Typography>
+                  </ListItem>
+                  <ListItem button>
+                    <Typography variant="h6" sx={{ color: '#ffffff'}}>
+                      FAQ
+                    </Typography>
+                  </ListItem>
+                  <ListItem button>
+                    <Typography variant="h6" sx={{ color: '#ffffff'}}>
+                      Contato
+                    </Typography>
+                  </ListItem>
+                </List>
+                <Button variant="contained" color="secondary" sx={{ marginTop:'15px', marginLeft: '15px', backgroundColor: '#ffffff', color: '#000000', textTransform: 'none' }}>
+                  <WhatsApp sx={{ marginRight: '5px' }} />
+                  Entre em contato
+                </Button>
+                </Paper>
+            </Drawer>
           </Grid>
-          <Grid item>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '300px'}}>
-              <Typography variant="h6">
-                Bloco 1
-              </Typography>
-              <Typography variant="h6">
-                FAQ
-              </Typography>
-              <Typography variant="h6">
-                Contato
-              </Typography>
-              </Box>
+          <Grid item xs={8} container justifyContent="center">
+            <img src="./logo.png" alt="Logo" />
           </Grid>
-          <Grid item>
-          <Button variant="contained" sx={{ marginLeft: 'auto', backgroundColor: '#ffffff', color: '#000000', textTransform: 'none' }}>
-              <WhatsApp sx={{ marginRight: '5px' }} /> 
-               Entre em contato
-            </Button>
-          </Grid>
+          <Grid item xs={2}></Grid>
         </Grid>
       </Toolbar>
+    );
+  };
+
+  return (
+    <AppBar position="static" sx={{ background: '#FFA500', height: '130px' }}>
+      {mobileView ? displayMobile() : displayDesktop()}
     </AppBar>
   );
 };
