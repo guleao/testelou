@@ -42,13 +42,28 @@ const Navbar = ({ bloco1Ref, faqRef, contatoRef }) => {
         </Grid>
 
         <Grid>
-        <Button variant="contained" color="secondary" sx={{ marginLeft: 'auto', backgroundColor: '#ffffff', color: '#000000', textTransform: 'none' }}
-                        onClick={() => window.open('https://wa.me/5545988041417?text=Oi%20mensagem%0A', '_blank')}
-
+        <Button 
+          variant="contained" 
+          color="secondary" 
+          sx={{ 
+            marginLeft: 'auto', 
+            backgroundColor: '#ffffff', 
+            color: '#000000', 
+            textTransform: 'none',
+            '&:hover': {
+              backgroundColor: '#ffffff',
+            },
+            '&:focus': {
+              backgroundColor: '#ffffff',
+            },
+          }}
+          disableRipple
+          onClick={() => window.open('https://wa.me/5545988041417?text=Oi%20mensagem%0A', '_blank')}
         >
           <WhatsApp sx={{ marginRight: '5px' }} />
           Entre em contato
         </Button>
+
         </Grid>
         
       </Toolbar>
