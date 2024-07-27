@@ -22,7 +22,7 @@ const Footer = () => {
         >
 
         <Box sx={{ marginBottom:'20px'}}>
-            <img src="./logo.png" alt="Logo"/>
+            <img src="./img/logo.png" alt="Logo"/>
         </Box>
         
         <Typography variant="body1" gutterBottom>

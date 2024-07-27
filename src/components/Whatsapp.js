@@ -13,7 +13,7 @@ const Whatsapp = () => {
 
     return (
     
-        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: isMobile ? '30px' : '100px', marginBottom: '50px' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: isMobile ? '50px' : '100px', marginBottom: '50px' }}>
             <Box 
             sx={{ 
                 display: 'flex', 
@@ -29,7 +29,7 @@ const Whatsapp = () => {
                 <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold' }}>
                 Ainda tem dúvidas sobre Pizza?
                 </Typography>
-                <Typography variant="body1" gutterBottom sx={{ fontWeight:'300'}}>
+                <Typography variant="body1" gutterBottom sx={{ fontWeight:'300', maxWidth: isMobile ? '210px' : '400px'}}>
                 Entre em contato direto com nossos atendentes.
                 </Typography>
                 <Button 

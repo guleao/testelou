@@ -11,7 +11,11 @@ const ContactForm = React.forwardRef((props, ref) => {
   const [message, setMessage] = useState('');
 
   const handleSubmit = () => {
-    alert(`Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`);
+    if ( name === "" || email === "" || message === ""){
+        alert("Preencha todos os campos.");
+    } else {
+        alert(`Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`);
+    }
   };
 
   return (
@@ -29,15 +33,15 @@ const ContactForm = React.forwardRef((props, ref) => {
             
         }}
         >
-            <Typography variant={"h6"} sx={{color: '#FF5000', fontWeight:'bold', marginTop: isMobile ? '30px' : 0}}>
+            <Typography variant={isMobile ? "h6" : "h5"} sx={{color: '#FF5000', fontWeight:'bold'}}>
             Entre em contato
             </Typography>
-            <Typography variant="h4" gutterBottom sx={{fontWeight:'bold'}}>
+            <Typography variant={ isMobile ? "h5" : "h4"} gutterBottom sx={{fontWeight:'bold'}}>
                 <Box>Fale com a nossa equipe especializada e adquira</Box>
                 <Box>nossos serviços. </Box>
             </Typography>
 
-            <Typography sx={{fontWeight:'300', marginBottom:'40px'}}>
+            <Typography sx={{fontWeight:'300', marginBottom:'40px', maxWidth: isMobile ? '290px' : '700px'}}>
                 <Box>Lorem ipsum dolor sit amet consectetur. Platea viverra nam vitae convallis. Orci fringilla imperdiet</Box>
                 <Box>malesuada ullamcorper facilisis.</Box>
             </Typography>

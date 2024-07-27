@@ -11,10 +11,10 @@ const Faq = React.forwardRef((props, ref) => {
   return (
     <div ref={ref}>
         <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row-reverse', justifyContent: 'center', alignItems: 'center', marginTop: isMobile ? '20px' : '80px', padding: isMobile ? '0 20px' : '0', width: isMobile ? '90%' : '100%' }}>
-            <img src={isMobile ? './Multipizza.png' : './Multipizza.png'}  alt="Pizza" style={{ width: '100%', maxWidth: '600px', marginBottom: isMobile ? '30px' : 0 }} /> 
+            <img src={isMobile ? './img/Multipizza.png' : './img/Multipizza.png'}  alt="Pizza" style={{ width: '100%', maxWidth: '600px', marginBottom: isMobile ? '30px' : 0 }} /> 
             <Box sx={{ textAlign: isMobile ? 'left' : 'left', maxWidth:'610px', marginRight: isMobile ? 0 : '30px' }}>
             
-                <Typography variant={isMobile ? "h5" : "h6"} sx={{color: '#FF5000', fontWeight:'bold', marginBottom: isMobile ? '20px' : '10px'}}>
+                <Typography variant={isMobile ? "h6" : "h5"} sx={{color: '#FF5000', fontWeight:'bold', marginBottom: isMobile ? '20px' : '10px'}}>
                 FAQ
                 </Typography>
 

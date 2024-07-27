@@ -24,7 +24,7 @@ const Navbar = ({ bloco1Ref, faqRef, contatoRef }) => {
     return (
       <Toolbar sx={{ display:'flex', justifyContent:'space-around', marginTop:'22px' }}>
         <Grid>
-        <img src="./logo.png" alt="Logo" sx={{ marginRight: '20px' }} />
+        <img src="./img/logo.png" alt="Logo" sx={{ marginRight: '20px' }} />
         </Grid>
         
         <Grid>
@@ -128,7 +128,7 @@ const Navbar = ({ bloco1Ref, faqRef, contatoRef }) => {
 
           </Grid>
           <Grid item xs={8} container justifyContent="center">
-            <img src="./logo.png" alt="Logo" />
+            <img src="./img/logo.png" alt="Logo" />
           </Grid>
           <Grid item xs={2}></Grid>
         </Grid>
