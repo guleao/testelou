@@ -105,7 +105,7 @@ const Faq = React.forwardRef((props, ref) => {
                     onChange={(event, isExpanded) => setOpenAccordion(isExpanded ? 'panel5' : '')}
                 >
                     <AccordionSummary
-                        expandIcon={openAccordion === 'panel1' ? <RemoveCircleOutline /> : <AddCircleOutline />}
+                        expandIcon={openAccordion === 'panel5' ? <RemoveCircleOutline /> : <AddCircleOutline />}
                         aria-controls="panel5a-content"
                         id="panel5a-header"
                         sx={{ padding: 0 }} 

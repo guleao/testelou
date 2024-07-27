@@ -24,12 +24,12 @@ const ContactForm = React.forwardRef((props, ref) => {
             alignItems: 'center', 
             width: isMobile ? '100%' : '100%', 
             height: '400px', 
-            marginTop: isMobile ? '200px' : '210px', 
+            marginTop: isMobile ? '220px' : '210px', 
             marginBottom: '220px', 
             
         }}
         >
-            <Typography variant={"h6"} sx={{color: '#FF5000', fontWeight:'bold'}}>
+            <Typography variant={"h6"} sx={{color: '#FF5000', fontWeight:'bold', marginTop: isMobile ? '30px' : 0}}>
             Entre em contato
             </Typography>
             <Typography variant="h4" gutterBottom sx={{fontWeight:'bold'}}>
@@ -65,7 +65,8 @@ const ContactForm = React.forwardRef((props, ref) => {
                     width: isMobile ? '90%' : '40%',
                     height:'60px',
                     minHeight:'60px',
-                    marginTop:'20px'
+                    marginTop:'20px',
+                    marginBottom:'30px'
                 }}
                 startIcon={<Send />}
                 onClick={handleSubmit}

@@ -27,7 +27,7 @@ function App() {
        <ThemeProvider theme={theme}>
           <Navbar bloco1Ref={bloco1Ref} faqRef={faqRef} contatoRef={contatoRef} />
           <img src={isMobile ? process.env.PUBLIC_URL + '/bannermob.png' : process.env.PUBLIC_URL + '/bannerdesk.png'} alt="Banner" style={{ width: '100%'}}/>
-          <Container fixed maxWidth="500px" > 
+          <Container fixed maxWidth="1216px" > 
               <Apresentacao ref={bloco1Ref}/>
               <FaqComponent ref={faqRef}/>
               <Whatsapp/>
