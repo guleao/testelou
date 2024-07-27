@@ -28,7 +28,7 @@ const Footer = () => {
         <Typography variant="body1" gutterBottom>
             Delivery +55 (21) 9 9999-9999
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="body2" sx={{ maxWidth: '300px'}}>
             Endereço: Av. Brasil 74 - Foz do Iguaçu - CEP 85851-000
         </Typography>
         </Box>
