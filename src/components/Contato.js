@@ -37,13 +37,31 @@ const ContactForm = React.forwardRef((props, ref) => {
             Entre em contato
             </Typography>
             <Typography variant={ isMobile ? "h5" : "h4"} gutterBottom sx={{fontWeight:'bold'}}>
-                <Box>Fale com a nossa equipe especializada e adquira</Box>
-                <Box>nossos serviços. </Box>
+            {isMobile ? (
+                    <>
+                    <Box>Se desejar alguma informação ou efetuar uma compra com nossos atendentes</Box>
+                    </>
+                ) : (
+                    <>
+                    <Box>Fale com a nossa equipe especializada e adquira</Box>
+                    <Box>nossos serviços.</Box>
+                    </>
+                )}
             </Typography>
 
             <Typography sx={{fontWeight:'300', marginBottom:'40px', maxWidth: isMobile ? '290px' : '700px'}}>
-                <Box>Lorem ipsum dolor sit amet consectetur. Platea viverra nam vitae convallis. Orci fringilla imperdiet</Box>
-                <Box>malesuada ullamcorper facilisis.</Box>
+               
+                {isMobile ? (
+                    <>
+                    <Box>Lorem ipsum dolor sit amet consectetur. Platea viverra nam vitae convallis.</Box>
+                     
+                    </>
+                ) : (
+                    <>
+                    <Box>Lorem ipsum dolor sit amet consectetur. Platea viverra nam vitae convallis. Orci fringilla imperdiet</Box>
+                    <Box>malesuada ullamcorper facilisis.</Box>
+                    </>
+                )}
             </Typography>
 
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: isMobile ? '90%' : '40%' }}>

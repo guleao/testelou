@@ -8,67 +8,73 @@ const Apresentacao = React.forwardRef((props, ref)  => {
 
   return (
     <div ref={ref}>
-        <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center', marginTop: '50px', padding: isMobile ? '0 20px' : '0', width: isMobile ? '90%' : '100%' }}>
+        <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center', marginTop: '50px', width: isMobile ? '100%' : '100%', marginLeft: isMobile ? 0 : '13px'}}>
         <img src={isMobile ? './img/Pizza_derretendoMob.png' : './img/Pizza_derretendo.png'}  alt="Pizza" style={{ width: '100%', maxWidth: '600px', marginRight: isMobile ? 0 : '20px', marginBottom: isMobile ? '20px' : 0 }} />
         <Box sx={{ textAlign: isMobile ? 'left' : 'left' }}>
-            <Typography variant={isMobile ? "h6" : "h5"} gutterBottom sx={{color: '#FF5000', fontWeight:'bold', marginLeft: isMobile ? 0 : '15px'}}>
+            <Typography variant={isMobile ? "h6" : "h5"} gutterBottom sx={{color: '#FF5000', fontWeight:'bold', marginLeft: isMobile ? 0 : '15px', marginTop:'15px'}}>
             Por que escolher Pizza SVG
             </Typography>
-            <Typography variant={isMobile ? "h5" : "h4"} sx={{ fontWeight:'bold', marginBottom: isMobile ? '0px' : '10px', marginLeft: isMobile ? 0 : '15px' }}>
+            <Typography variant={isMobile ? "h5" : "h4"} sx={{ fontWeight:'bold', marginLeft: isMobile ? 0 : '15px' }}>
                 <Box>A melhor pizza com o melhor </Box>
                 <Box>atendimento da cidade!</Box>     
             </Typography>
-            <List sx={{marginTop: isMobile ? '10px' : '40px', marginBottom:'20px'}}>
-                <ListItem>
-                <Box sx={{ border: '1px solid transparent', borderRadius: '10%', width: 50, height: 50, display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0px 10px 10px -3px rgba(0, 0, 0, 0.25)', backgroundColor: '#ffffff' }}>        
-                    <ListItemIcon sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                        <img src='./img/liberty.png'  alt='icon'/>
-                    </ListItemIcon>
-                </Box>
-    
-                <ListItemText sx={{marginLeft:'20px', maxWidth: '500px'}}
-                primary={
-                <Typography variant="h6">
-                    Lorem Ipsum Dolor
-                </Typography>
-                }
-                secondary="Lorem ipsum dolor sit amet consectetur. Etiam pellentesque gravid eu egestas sed quis donec ipsum eu. In viverra velit."
-                />
+            <List sx={{marginTop: isMobile ? '10px' : '0px' }}>
+                <ListItem sx={{right: isMobile ? '15px' : 0 }}>
+                    <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row' }}>
+                        <Box sx={{ border: '1px solid transparent', borderRadius: '10%', marginLeft: isMobile ? 0 : 0 , width: 50, height: 50, display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0px 10px 10px -3px rgba(0, 0, 0, 0.25)', backgroundColor: '#ffffff' }}>        
+                            <ListItemIcon sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <img src='./img/liberty.png'  alt='icon'/>
+                            </ListItemIcon>
+                        </Box>
+                        <ListItemText sx={{marginLeft: isMobile ? '0px' : '20px', maxWidth: '550px'}}
+                            primary={
+                            <Typography variant="h6">
+                                Lorem Ipsum Dolor
+                            </Typography>
+                            }
+                            secondary={<Typography variant='h5' sx={{fontWeight:'300', fontSize: isMobile ? '16px' : '20px'}}>Lorem ipsum dolor sit amet consectetur. Etiam pellentesque gravid eu egestas sed quis donec ipsum eu. In viverra velit.</Typography>}
+                        />
+                    </Box>
+                </ListItem>
+                            
+
+                <ListItem sx={{right: isMobile ? '15px' : 0 }}>
+                    <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'flex-start' }}>
+                        <Box sx={{ border: '1px solid transparent', borderRadius: '10%', marginLeft: isMobile ? 0 : 0 , width: 50, height: 50, display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0px 10px 10px -3px rgba(0, 0, 0, 0.25)', backgroundColor: '#ffffff' }}>        
+                            <ListItemIcon sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <img src='./img/ferramenta.png'  alt='icon'/>
+                            </ListItemIcon>
+                        </Box>
+                        <ListItemText sx={{marginLeft: isMobile ? '0px' : '20px', maxWidth: '550px'}}
+                            primary={
+                            <Typography variant="h6">
+                                Lorem Ipsum Dolor
+                            </Typography>
+                            }
+                            secondary={<Typography variant='h5' sx={{fontWeight:'300', fontSize: isMobile ? '16px' : '20px'}}>Lorem ipsum dolor sit amet consectetur. Etiam pellentesque gravid eu egestas sed quis donec ipsum eu. In viverra velit.</Typography>}
+                        />
+                    </Box>
                 </ListItem>
 
-                <ListItem>
-                <Box sx={{ border: '1px solid transparent', borderRadius: '10%', width: 50, height: 50, display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0px 10px 10px -3px rgba(0, 0, 0, 0.25)', backgroundColor: '#ffffff' }}>        
-                    <ListItemIcon sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                        <img src='./img/ferramenta.png'  alt='icon'/>
-                    </ListItemIcon>
-                </Box>
-                
-                <ListItemText sx={{marginLeft:'20px', maxWidth: '500px'}}
-                    primary={
-                    <Typography variant="h6">
-                        Lorem Ipsum Dolor
-                    </Typography>
-                    }
-                    secondary="Lorem ipsum dolor sit amet consectetur. Etiam pellentesque gravid eu egestas sed quis donec ipsum eu. In viverra velit."
-                />
+                <ListItem sx={{right: isMobile ? '15px' : 0 }}>
+                    <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'flex-start' }}>
+                        <Box sx={{ border: '1px solid transparent', borderRadius: '10%', marginLeft: isMobile ? 0 : 0 , width: 50, height: 50, display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0px 10px 10px -3px rgba(0, 0, 0, 0.25)', backgroundColor: '#ffffff' }}>        
+                            <ListItemIcon sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <img src='./img/cartao.png'  alt='icon'/>
+                            </ListItemIcon>
+                        </Box>
+                        <ListItemText sx={{marginLeft: isMobile ? '0px' : '20px', maxWidth: '550px'}}
+                            primary={
+                            <Typography variant="h6">
+                                Lorem Ipsum Dolor
+                            </Typography>
+                            }
+                            secondary={<Typography variant='h5' sx={{fontWeight:'300', fontSize: isMobile ? '16px' : '20px'}}>Lorem ipsum dolor sit amet consectetur. Etiam pellentesque gravid eu egestas sed quis donec ipsum eu. In viverra velit.</Typography>}
+                        />
+                    </Box>
                 </ListItem>
 
-                <ListItem>
-                <Box sx={{ border: '1px solid transparent', borderRadius: '10%', width: 50, height: 50, display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0px 10px 10px -3px rgba(0, 0, 0, 0.25)', backgroundColor: '#ffffff' }}>        
-                    <ListItemIcon sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                        <img src='./img/cartao.png' alt='icon'/>
-                    </ListItemIcon>
-                </Box>
-                
-                <ListItemText sx={{marginLeft:'20px', maxWidth: '500px'}}
-                    primary={
-                    <Typography variant="h6">
-                        Lorem Ipsum Dolor
-                    </Typography>
-                    }
-                    secondary="Lorem ipsum dolor sit amet consectetur. Etiam pellentesque gravid eu egestas sed quis donec ipsum eu. In viverra velit."
-                />
-                </ListItem>
+
 
             </List>
         </Box>

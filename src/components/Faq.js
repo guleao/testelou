@@ -10,7 +10,7 @@ const Faq = React.forwardRef((props, ref) => {
 
   return (
     <div ref={ref}>
-        <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row-reverse', justifyContent: 'center', alignItems: 'center', marginTop: isMobile ? '20px' : '80px', padding: isMobile ? '0 20px' : '0', width: isMobile ? '90%' : '100%' }}>
+        <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row-reverse', justifyContent: 'center', alignItems: 'center', marginTop: isMobile ? '20px' : '80px', width: isMobile ? '100%' : '100%' }}>
             <img src={isMobile ? './img/Multipizza.png' : './img/Multipizza.png'}  alt="Pizza" style={{ width: '100%', maxWidth: '600px', marginBottom: isMobile ? '30px' : 0 }} /> 
             <Box sx={{ textAlign: isMobile ? 'left' : 'left', maxWidth:'610px', marginRight: isMobile ? 0 : '30px' }}>
             
@@ -23,9 +23,9 @@ const Faq = React.forwardRef((props, ref) => {
                     <Box>nosso processo de produção!</Box>
                 </Typography>
 
-                <Typography sx={{marginBottom: isMobile ? '30px' : 0, fontWeight:'300'}}>
-                    <Box>Lorem ipsum dolor sit amet consectetur. <span style={{color: '#FF5000', fontWeight:'bold'}}>Etiam pellentesque</span> gravida </Box>
-                    <Box> eu egestas sed quis donec ipsum eu. In viverra velit.</Box>
+                <Typography variant={isMobile ? 'h6' : 'h5'} sx={{marginBottom: isMobile ? '30px' : 0, fontWeight:'300'}}>
+                    Lorem ipsum dolor sit amet consectetur. <span style={{color: '#FF5000', fontWeight:'bold'}}>Etiam pellentesque</span> gravida 
+                     eu egestas sed quis donec ipsum eu. In viverra velit.
                 </Typography>
 
                 <Accordion style={{ marginTop: '15px', maxWidth: '100%', boxShadow: 'none' }}

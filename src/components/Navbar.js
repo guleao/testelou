@@ -1,17 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, ListItem, Grid, Paper } from '@mui/material';
 import { WhatsApp, Menu } from '@mui/icons-material';
+
 
 const Navbar = ({ bloco1Ref, faqRef, contatoRef }) => {
 
   const [mobileView, setMobileView] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const menuButtonRef = React.useRef(null);
+
 
   const handleResize = () => {
     setMobileView(window.innerWidth < 600);
   };
 
-  React.useEffect(() => {
+  const handleDrawerOpen = (event) => {
+    event.preventDefault();
+    setDrawerOpen(true);
+    menuButtonRef.current.blur();
+  };
+
+  const handleDrawerClose = () => {
+    setDrawerOpen(false);
+    document.activeElement.blur();
+  };
+
+  useEffect(() => {
     handleResize();
     window.addEventListener("resize", handleResize);
 
@@ -23,8 +37,8 @@ const Navbar = ({ bloco1Ref, faqRef, contatoRef }) => {
   const displayDesktop = () => {
     return (
       <Toolbar sx={{ display:'flex', justifyContent:'space-around', marginTop:'22px' }}>
-        <Grid>
-        <img src="./img/logo.png" alt="Logo" sx={{ marginRight: '20px' }} />
+        <Grid sx={{ cursor: 'pointer' }}>
+          <img src="./img/logo.png" alt="Logo" sx={{ marginRight: '20px' }} onClick={() => window.location.href = '/'} />
         </Grid>
         
         <Grid>
@@ -75,10 +89,10 @@ const Navbar = ({ bloco1Ref, faqRef, contatoRef }) => {
       <Toolbar sx={{ display:'flex', justifyContent:'center', marginTop:'20px'}}>
         <Grid container>
           <Grid item xs={2}>
-            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ display:'flex', alignItems:'center', position:'absolute', marginTop:'20px' }} onClick={() => setDrawerOpen(true)}>
-              <Menu />
+          <IconButton edge="start" color="inherit" aria-label="menu" sx={{ display:'flex', alignItems:'center', position:'absolute', marginTop:'20px' }} onClick={handleDrawerOpen} ref={menuButtonRef}>            
+            <Menu />
             </IconButton>
-            <Drawer anchor="left" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+            <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerClose}>
               <Paper sx={{ width:'210px', height:'100%', background:'#FFA500'}}>
                 <List>
                   <ListItem button onClick={() => bloco1Ref.current.scrollIntoView({ behavior: 'smooth' })}>
@@ -137,9 +151,11 @@ const Navbar = ({ bloco1Ref, faqRef, contatoRef }) => {
   };
 
   return (
-    <AppBar position="static" sx={{ background: '#FFA500', height: '130px' }}>
-      {mobileView ? displayMobile() : displayDesktop()}
-    </AppBar>
+    <div onClick={(event) => event.stopPropagation()}>
+      <AppBar position="static" sx={{ background: '#FFA500', height: '130px' }}>
+        {mobileView ? displayMobile() : displayDesktop()}
+      </AppBar>
+    </div>
   );
 };
 
