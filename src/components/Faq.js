@@ -28,7 +28,7 @@ const Faq = React.forwardRef((props, ref) => {
                      eu egestas sed quis donec ipsum eu. In viverra velit.
                 </Typography>
 
-                <Accordion style={{ marginTop: '15px', maxWidth: '100%', boxShadow: 'none' }}
+                <Accordion style={{ marginTop: '15px', maxWidth: isMobile ? '100%' : '98%', boxShadow: 'none' }}
                     expanded={openAccordion === 'panel1'}
                     onChange={(event, isExpanded) => setOpenAccordion(isExpanded ? 'panel1' : '')}
                 >
@@ -46,7 +46,7 @@ const Faq = React.forwardRef((props, ref) => {
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
-                <Accordion style={{ marginTop: '15px', maxWidth: '100%', boxShadow: 'none', borderTop: '1px solid rgba(0, 0, 0, 0.1)' }}
+                <Accordion style={{ marginTop: '15px', maxWidth: isMobile ? '100%' : '98%', boxShadow: 'none', borderTop: '1px solid rgba(0, 0, 0, 0.1)' }}
                     expanded={openAccordion === 'panel2'}
                     onChange={(event, isExpanded) => setOpenAccordion(isExpanded ? 'panel2' : '')}
                 >
@@ -64,7 +64,7 @@ const Faq = React.forwardRef((props, ref) => {
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
-                <Accordion style={{ marginTop: '15px', maxWidth: '100%', boxShadow: 'none', borderTop: '1px solid rgba(0, 0, 0, 0.1)' }}
+                <Accordion style={{ marginTop: '15px', maxWidth:  isMobile ? '100%' : '98%', boxShadow: 'none', borderTop: '1px solid rgba(0, 0, 0, 0.1)' }}
                     expanded={openAccordion === 'panel3'}
                     onChange={(event, isExpanded) => setOpenAccordion(isExpanded ? 'panel3' : '')}
                 >
@@ -82,7 +82,7 @@ const Faq = React.forwardRef((props, ref) => {
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
-                <Accordion style={{ marginTop: '15px', maxWidth: '100%', boxShadow: 'none', borderTop: '1px solid rgba(0, 0, 0, 0.1)' }}
+                <Accordion style={{ marginTop: '15px', maxWidth:  isMobile ? '100%' : '98%', boxShadow: 'none', borderTop: '1px solid rgba(0, 0, 0, 0.1)' }}
                     expanded={openAccordion === 'panel4'}
                     onChange={(event, isExpanded) => setOpenAccordion(isExpanded ? 'panel4' : '')}
                 >
@@ -100,7 +100,7 @@ const Faq = React.forwardRef((props, ref) => {
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
-                <Accordion style={{ marginTop: '15px', maxWidth: '100%', boxShadow: 'none', borderTop: '1px solid rgba(0, 0, 0, 0.1)' }}
+                <Accordion style={{ marginTop: '15px', maxWidth:  isMobile ? '100%' : '98%', boxShadow: 'none', borderTop: '1px solid rgba(0, 0, 0, 0.1)' }}
                     expanded={openAccordion === 'panel5'}
                     onChange={(event, isExpanded) => setOpenAccordion(isExpanded ? 'panel5' : '')}
                 >
