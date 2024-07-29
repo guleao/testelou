@@ -10,7 +10,7 @@ const Apresentacao = React.forwardRef((props, ref)  => {
   return (
     <div ref={ref}>
         <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center', marginTop: '50px', width: '100%', marginLeft: (isMobile || isLargeScreen) ? 0 : '13px'}}>
-        <img src={isMobile ? './img/Pizza_derretendoMob.png' : './img/Pizza_derretendo.png'}  alt="Pizza" style={{ width: '100%', maxWidth: isLargeScreen ? '630px' : '600px', marginRight: isMobile ? 0 : '24px', marginBottom: isMobile ? '20px' : 0 }} />
+        <img src={isMobile ? './img/Pizza_derretendoMob.png' : './img/Pizza_derretendo.png'}  alt="Pizza" style={{ width: '100%', maxWidth: isLargeScreen ? '530px' : '600px', marginRight: isMobile ? 0 : '24px', marginBottom: isMobile ? '20px' : 0 }} />
         <Box sx={{ textAlign: 'left' }}>
             <Typography variant={isMobile ? "h6" : "h5"} gutterBottom sx={{color: '#FF5000', fontWeight:'bold', marginLeft: isMobile ? 0 : '15px', marginTop:'15px'}}>
             Por que escolher Pizza SVG
