@@ -7,11 +7,12 @@ const Faq = React.forwardRef((props, ref) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const [openAccordion, setOpenAccordion] = useState('');
+    const isLargeScreen = useMediaQuery('(min-width:900px) and (max-width:1440px)');
 
   return (
     <div ref={ref}>
         <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row-reverse', justifyContent: 'center', alignItems: 'center', marginTop: isMobile ? '20px' : '80px', width: isMobile ? '100%' : '100%' }}>
-            <img src={isMobile ? './img/Multipizza.png' : './img/Multipizza.png'}  alt="Pizza" style={{ width: '100%', maxWidth: '600px', marginBottom: isMobile ? '30px' : 0 }} /> 
+            <img src={isMobile ? './img/Multipizza.png' : './img/Multipizza.png'}  alt="Pizza" style={{ width: '100%', maxWidth: isLargeScreen ? '580px' : '600px', marginBottom: isMobile ? '30px' : 0 }} /> 
             <Box sx={{ textAlign: isMobile ? 'left' : 'left', maxWidth:'610px', marginRight: isMobile ? 0 : '30px' }}>
             
                 <Typography variant={isMobile ? "h6" : "h5"} sx={{color: '#FF5000', fontWeight:'bold', marginBottom: isMobile ? '20px' : '10px'}}>
