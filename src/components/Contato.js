@@ -26,9 +26,9 @@ const ContactForm = React.forwardRef((props, ref) => {
             flexDirection: 'column', 
             justifyContent: 'center', 
             alignItems: 'center', 
-            width: isMobile ? '100%' : '100%', 
+            width: '100%', 
             height: '400px', 
-            marginTop: isMobile ? '220px' : '210px', 
+            marginTop: isMobile ? '220px' : '230px', 
             marginBottom: '220px', 
             
         }}
