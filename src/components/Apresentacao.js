@@ -19,7 +19,7 @@ const Apresentacao = React.forwardRef((props, ref)  => {
                 <Box>A melhor pizza com o melhor </Box>
                 <Box>atendimento da cidade!</Box>     
             </Typography>
-            <List sx={{marginTop: isMobile ? '10px' : '0px' }}>
+            <List sx={{marginTop: isMobile ? '10px' : '45px' }}>
                 <ListItem sx={{right: isMobile ? '15px' : 0 }}>
                     <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row' }}>
                         <Box sx={{ border: '1px solid transparent', borderRadius: '10%', marginLeft: isMobile ? 0 : 0 , width: 50, height: 50, display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0px 10px 10px -3px rgba(0, 0, 0, 0.25)', backgroundColor: '#ffffff' }}>        
