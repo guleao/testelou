@@ -64,17 +64,17 @@ const ContactForm = React.forwardRef((props, ref) => {
                 )}
             </Typography>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: isMobile ? '90%' : '40%' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: isMobile ? '100%' : '40%' }}>
                 <Typography variant="body1" style={{ marginBottom: '5px' }}>Primeiro nome</Typography>
                 <TextField variant="outlined" style={{ marginBottom: '10px', width: '100%' }} value={name} onChange={(e) => setName(e.target.value)} />
             </Box>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: isMobile ? '90%' : '40%' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: isMobile ? '100%' : '40%' }}>
                 <Typography variant="body1" style={{ marginBottom: '5px' }}>Email</Typography>
                 <TextField variant="outlined" style={{ marginBottom: '10px', width: '100%' }} value={email} onChange={(e) => setEmail(e.target.value)} />
             </Box>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: isMobile ? '90%' : '40%' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: isMobile ? '100%' : '40%' }}>
                 <Typography variant="body1" style={{ marginBottom: '5px' }}>Mensagem</Typography>
                 <TextField  variant="outlined" multiline rows={4} style={{ marginBottom: '10px', width: '100%' }} value={message} onChange={(e) => setMessage(e.target.value)} />
             </Box>
@@ -84,7 +84,7 @@ const ContactForm = React.forwardRef((props, ref) => {
                 style={{ 
                     backgroundColor: '#FF5000',  
                     color: 'white', 
-                    width: isMobile ? '90%' : '40%',
+                    width: isMobile ? '100%' : '40%',
                     height:'60px',
                     minHeight:'60px',
                     marginTop:'20px',
